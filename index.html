@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#170d1c">
+<title>Myy Little Universe 🌏🧿</title>
+<style>
+:root{--ink:#fff7f4;--muted:#d8c5cf;--gold:#f4d69a;--pink:#ff9bbd;--wine:#2a1027;--panel:rgba(255,255,255,.075)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#100a15;color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 10%,#49203c 0,transparent 40%),radial-gradient(ellipse at 85% 35%,#182e48 0,transparent 42%),linear-gradient(145deg,#100a15,#1b1020 55%,#0d101c)}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.45;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#f6c9dc 1px,transparent 1px);background-size:83px 83px,137px 137px;background-position:0 0,35px 49px}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:15px 6vw;background:linear-gradient(#100a15dd,transparent);backdrop-filter:blur(7px)}
+.brand{font-size:18px;color:var(--gold);letter-spacing:.04em}nav a{color:#f8e9ef;text-decoration:none;margin-left:18px;font:12px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:100px 20px 65px;position:relative}
+.hero-inner{max-width:780px}.eyebrow{color:var(--gold);font:11px Arial,sans-serif;letter-spacing:.35em;text-transform:uppercase}
+.hero h1{font-size:clamp(48px,10vw,104px);font-weight:400;line-height:.98;margin:22px 0 15px;text-shadow:0 8px 35px #0008}
+.hero h1 span{color:var(--pink);font-style:italic}.sub{font-size:clamp(16px,2.7vw,21px);color:var(--muted);line-height:1.7;max-width:580px;margin:0 auto 30px}
+button,.button{border:1px solid #f4d69a88;background:linear-gradient(135deg,#f6d9a7,#d99db6);color:#281323;padding:14px 25px;border-radius:999px;font: bold 12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 30px #e9a6c52b;transition:.25s}
+button:hover,.button:hover{transform:translateY(-3px);box-shadow:0 12px 34px #e9a6c55c}
+.hero-photo{width:min(72vw,310px);height:min(82vw,380px);object-fit:cover;object-position:center 25%;border:8px solid #fff1e7;border-bottom-width:24px;box-shadow:0 25px 70px #0009;transform:rotate(-3deg);margin:32px auto 0;display:block}
+section{padding:90px 7vw;max-width:1180px;margin:auto}.section-head{text-align:center;margin-bottom:42px}.section-head small{color:var(--gold);font:11px Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase}.section-head h2{font-size:clamp(34px,6vw,55px);font-weight:400;margin:12px 0}.section-head p{color:var(--muted);font-size:16px;line-height:1.7}
+.note{max-width:760px;margin:auto;padding:30px 32px;border:1px solid #f4d69a4a;background:var(--panel);border-radius:22px;text-align:center;line-height:1.9;color:#f6e6ec;box-shadow:0 20px 70px #0003}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{position:relative;padding:10px 10px 38px;background:#f7eee7;border-radius:3px;box-shadow:0 15px 40px #0006;transform:rotate(var(--tilt));transition:.3s;cursor:pointer}.card:hover{transform:translateY(-8px) rotate(0deg) scale(1.02);z-index:2}.card img{width:100%;height:330px;object-fit:cover;display:block}.card p{position:absolute;bottom:7px;left:0;right:0;text-align:center;color:#523246;font-size:14px;margin:0}
+.timeline{max-width:700px;margin:auto;border-left:1px solid #e7c69b77;padding-left:27px}.moment{position:relative;margin:0 0 30px;padding:20px 22px;background:var(--panel);border:1px solid #ffffff18;border-radius:14px}.moment:before{content:"♡";position:absolute;left:-39px;top:18px;color:var(--pink);font-size:22px}.moment h3{margin:0 0 8px;color:var(--gold);font-weight:400;font-size:23px}.moment p{margin:0;color:var(--muted);line-height:1.7}
+.proposal{max-width:760px;margin:auto;text-align:center;padding:48px 25px;border:1px solid #f4d69a88;border-radius:28px;background:linear-gradient(145deg,#ffffff12,#f09abb12);box-shadow:0 20px 80px #0006}.proposal .ring{font-size:58px;filter:drop-shadow(0 5px 15px #ffb5cf66)}.proposal h2{font-size:clamp(32px,6vw,53px);font-weight:400;margin:18px 0}.proposal p{color:var(--muted);line-height:1.8;font-size:17px}.answers{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}.answers button{min-width:150px}.answers .soft{background:transparent;color:#ffeaf1;border:1px solid #ffeaf177;box-shadow:none}.response{min-height:35px;margin-top:22px;color:var(--gold);font-size:20px;line-height:1.6}
+footer{text-align:center;padding:45px 20px 60px;color:#cbb5c2;font-size:14px}footer span{color:var(--pink)}
+#lightbox{position:fixed;inset:0;background:#08060beF;display:none;place-items:center;z-index:30;padding:20px}#lightbox.open{display:grid}#lightbox img{max-width:min(92vw,850px);max-height:85vh;object-fit:contain;border:8px solid #fff4ec;box-shadow:0 20px 80px #000}#lightbox button{position:absolute;top:20px;right:20px;padding:10px 15px}
+.heart{position:fixed;bottom:-30px;z-index:20;pointer-events:none;animation:float 6s linear forwards;color:#ff9bbd;text-shadow:0 0 12px #ff9bbd88}@keyframes float{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(max-width:760px){nav{padding:13px 5vw}.brand{font-size:15px}nav a{margin-left:10px;font-size:10px}.gallery{grid-template-columns:repeat(2,1fr);gap:12px}.card img{height:245px}section{padding:70px 5vw}.hero-photo{height:320px;width:250px}}
+@media(max-width:430px){nav a{margin-left:7px;font-size:9px}.gallery{grid-template-columns:1fr 1fr}.card{padding:7px 7px 32px}.card img{height:205px}}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<nav><div class="brand">♡ MY LITTLE UNIVERSE</div><div><a href="#memories">Her gallery</a><a href="#his-gallery">My side</a><a href="#letter">A note</a><a href="#question">The question</a></div></nav>
+<header class="hero" id="top">
+ <div class="hero-inner">
+  <div class="eyebrow">A tiny museum for my favourite person</div>
+  <h1>Myy Little<br><span>Babygurll</span> ❤🧿</h1>
+  <p class="sub">Your memories, my memories, and the little universe we are dreaming of — all collected in one place.</p>
+  <a class="button" href="#memories" style="display:inline-block;text-decoration:none">Enter our universe ✦</a>
+  <img class="hero-photo" src="assets/02-tiny-babygirl.jpg" alt="A childhood photograph, the first treasure in this little museum">
+  <div style="color:#f4d69a;margin-top:18px;font-style:italic">The tiniest star in my universe ✧</div>
+ </div>
+</header>
+<section id="letter">
+ <div class="section-head"><small>Exhibit no. 01</small><h2>Before I knew you…</h2></div>
+ <div class="note">Somewhere in this big, beautiful world, a little girl was growing up — smiling, laughing, making memories. I wish I could tell that tiny version of you how loved she would become. And now, every version of you is precious to me. <br><br><span style="color:var(--gold);font-style:italic">You are my favourite kind of blessing in disguise. ♡</span></div>
+</section>
+<section id="memories">
+ <div class="section-head"><small>Exhibit no. 02</small><h2>The Gallery of You</h2><p>Every picture is a little piece of the magic that makes you, you. Tap any photo to see it closer.</p></div>
+ <div class="gallery">
+  <div class="card" style="--tilt:-2deg"><img src="assets/01-little-moments.jpg" alt="A close-up memory" loading="lazy"><p>Little moments ♡</p></div>
+  <div class="card" style="--tilt:2deg"><img src="assets/02-tiny-babygirl.jpg" alt="Her childhood photograph" loading="lazy"><p>Our tiny star ✨</p></div>
+  <div class="card" style="--tilt:-1deg"><img src="assets/03-sunshine-smile.jpg" alt="A sunshine-lit portrait" loading="lazy"><p>My sunshine ☀</p></div>
+  <div class="card" style="--tilt:2deg"><img src="assets/04-golden-hour.jpg" alt="An outdoor golden-hour memory" loading="lazy"><p>Golden hour girl 🌷</p></div>
+  <div class="card" style="--tilt:-2deg"><img src="assets/05-maroon-memories.jpg" alt="A maroon outfit photo collage" loading="lazy"><p>Pretty in maroon ❤️</p></div>
+  <div class="card" style="--tilt:1deg"><img src="assets/06-pink-dream.jpg" alt="A pink outfit photo collage" loading="lazy"><p>My pink dream 🎀</p></div>
+ </div>
+</section>
+<section id="his-gallery">
+ <div class="section-head"><small>Exhibit no. 03</small><h2>A little piece of me</h2><p>Because this story has two sides — here are a few moments from the boy who made this tiny museum for you. Tap any photo to see it closer.</p></div>
+ <div class="gallery">
+  <div class="card" style="--tilt:2deg"><img src="assets/07-his-mirror-selfie.jpg" alt="His mirror selfie" loading="lazy"><p>The museum maker ♡</p></div>
+  <div class="card" style="--tilt:-2deg"><img src="assets/08-his-mirror-moment.jpg" alt="Another mirror selfie" loading="lazy"><p>A little mirror moment</p></div>
+  <div class="card" style="--tilt:1deg"><img src="assets/09-his-side-profile.jpg" alt="His side profile portrait" loading="lazy"><p>Just me ✨</p></div>
+  <div class="card" style="--tilt:-1deg"><img src="assets/10-his-candid.jpg" alt="His candid portrait" loading="lazy"><p>One for our memories</p></div>
+  <div class="card" style="--tilt:2deg"><img src="assets/11-his-soft-selfie.jpg" alt="His casual selfie" loading="lazy"><p>Your favourite boy? 🥺</p></div>
+ </div>
+</section>
+<section>
+ <div class="section-head"><small>Exhibit no. 04</small><h2>A little promise</h2></div>
+ <div class="timeline">
+  <div class="moment"><h3>Every little version of you</h3><p>The baby in the old photograph, the girl in the sunshine, and the person you are today — all of them deserve the softest love.</p></div>
+  <div class="moment"><h3>More memories to come</h3><p>This museum isn't finished. I hope we keep adding new pictures, silly moments, adventures and stories to it.</p></div>
+  <div class="moment"><h3>My favourite place</h3><p>Wherever life takes us, I hope we keep choosing kindness, honesty, laughter and each other.</p></div>
+ </div>
+</section>
+<section id="question">
+ <div class="proposal">
+  <div class="ring">💍</div><div class="eyebrow">The final exhibit · just for you</div>
+  <h2>Myy Little Babygurll…</h2>
+  <p>Out of all the people in this universe, you are the one I want to make a million more memories with.</p>
+  <h2 style="font-size:clamp(27px,5vw,43px);color:var(--pink);line-height:1.2">Will you be mine and be with me always? 😭🎀❤</h2>
+  <div class="answers"><button id="yes">YES, MY LOVE ❤</button><button class="soft" id="think">I need a hug first 🥺</button></div>
+  <div class="response" id="response" aria-live="polite"></div>
+ </div>
+</section>
+<footer>Made with a whole lot of love <span>♥</span><br><small>For myy little babygurll · Myy Little Universe 🌏🧿</small></footer>
+<div id="lightbox" aria-label="Photo viewer"><button id="close">CLOSE ✕</button><img src="" alt="Expanded memory"></div>
+<script>
+const box=document.getElementById('lightbox'), big=box.querySelector('img');
+document.querySelectorAll('.card img').forEach(img=>img.addEventListener('click',()=>{big.src=img.src;big.alt=img.alt;box.classList.add('open')}));
+document.getElementById('close').onclick=()=>box.classList.remove('open');
+box.addEventListener('click',e=>{if(e.target===box)box.classList.remove('open')});
+document.getElementById('yes').onclick=()=>{document.getElementById('response').textContent='You just made my whole universe brighter. I love youuu! 💍❤️🧿';burst()};
+document.getElementById('think').onclick=()=>{document.getElementById('response').textContent='Sending you the biggest, warmest hug. Take all the time you need, my love. 🥺❤️';burst()};
+function burst(){for(let i=0;i<24;i++){const h=document.createElement('div');h.className='heart';h.textContent=['❤','♡','💗','✦'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*24)+'px';h.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),8500)}}
+setInterval(()=>{if(Math.random()<.45){const h=document.createElement('div');h.className='heart';h.textContent='♡';h.style.left=Math.random()*100+'vw';h.style.fontSize='18px';document.body.appendChild(h);setTimeout(()=>h.remove(),6500)}},1800);
+</script>
+</body></html>
